@@ -1,0 +1,92 @@
+[
+  {
+    "asset": "dark_wood",
+    "map": "Diffuse",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/dark_wood",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wood/dark_wood_diff_1k.jpg",
+    "path": "/textures/dark_wood/dark_wood_diff_1k.jpg",
+    "md5": "47fa883f1bb33acc5711245f64b75975"
+  },
+  {
+    "asset": "dark_wood",
+    "map": "nor_gl",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/dark_wood",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wood/dark_wood_nor_gl_1k.jpg",
+    "path": "/textures/dark_wood/dark_wood_nor_gl_1k.jpg",
+    "md5": "ca74ffa4c1b7ff5afe7316bbfa87f9a0"
+  },
+  {
+    "asset": "dark_wood",
+    "map": "Rough",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/dark_wood",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/dark_wood/dark_wood_rough_1k.jpg",
+    "path": "/textures/dark_wood/dark_wood_rough_1k.jpg",
+    "md5": "b1acb7bf90785d3945a85eca408dbc6c"
+  },
+  {
+    "asset": "old_wood_floor",
+    "map": "Diffuse",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/old_wood_floor",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/old_wood_floor/old_wood_floor_diff_1k.jpg",
+    "path": "/textures/old_wood_floor/old_wood_floor_diff_1k.jpg",
+    "md5": "ffaa68add0544811b30459e58cc9b4fd"
+  },
+  {
+    "asset": "old_wood_floor",
+    "map": "nor_gl",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/old_wood_floor",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/old_wood_floor/old_wood_floor_nor_gl_1k.jpg",
+    "path": "/textures/old_wood_floor/old_wood_floor_nor_gl_1k.jpg",
+    "md5": "2ec0f5e82232d1e9348fc48923f427a4"
+  },
+  {
+    "asset": "old_wood_floor",
+    "map": "Rough",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/old_wood_floor",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/old_wood_floor/old_wood_floor_rough_1k.jpg",
+    "path": "/textures/old_wood_floor/old_wood_floor_rough_1k.jpg",
+    "md5": "e52625ea19fa46a31747abbef00d1627"
+  },
+  {
+    "asset": "plastered_wall",
+    "map": "Diffuse",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/plastered_wall",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_wall/plastered_wall_diff_1k.jpg",
+    "path": "/textures/plastered_wall/plastered_wall_diff_1k.jpg",
+    "md5": "9f64cd14ded4938e64ab6c6bb3de3c19"
+  },
+  {
+    "asset": "plastered_wall",
+    "map": "nor_gl",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/plastered_wall",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_wall/plastered_wall_nor_gl_1k.jpg",
+    "path": "/textures/plastered_wall/plastered_wall_nor_gl_1k.jpg",
+    "md5": "e3e00c5d9a589621bf3cc541d9fb7d81"
+  },
+  {
+    "asset": "plastered_wall",
+    "map": "Rough",
+    "resolution": "1k",
+    "license": "CC0-1.0",
+    "source": "https://polyhaven.com/a/plastered_wall",
+    "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/plastered_wall/plastered_wall_rough_1k.jpg",
+    "path": "/textures/plastered_wall/plastered_wall_rough_1k.jpg",
+    "md5": "5c5f8e9c43bf183b45274575a7eac318"
+  }
+]

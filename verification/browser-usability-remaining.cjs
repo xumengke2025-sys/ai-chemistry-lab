@@ -1,0 +1,30 @@
+async (page) => {
+  const read=()=>page.evaluate(()=>window.__labEvidence.world);
+  const button=async name=>{await page.getByRole('button',{name,exact:true}).click({timeout:10000});await page.waitForTimeout(900);};
+  const escape=async()=>{await page.keyboard.press('Escape');await page.waitForTimeout(1100);};
+  const click=async id=>{const p=await page.evaluate(id=>window.__labEvidence.projected[id],id);await page.mouse.click(...p);await page.waitForTimeout(1100);};
+  const inspect=async id=>{await escape();await click(id);if((await read()).selected!==id)throw new Error(`object click missed ${id}`);};
+  const pick=async id=>{await inspect(id);const names={measure:'量取器皿',pipette:'滴管',tweezers:'镊子',spoon:'药匙',tube:'导管与集气瓶',beaker:'反应杯',stopper:'密闭塞'};await button(`拿起${names[id]}`);};
+  const open=async id=>{await inspect(id);await button('打开瓶塞');await escape();};
+  const dose=async(tool='measure')=>{await pick(tool);await button(tool==='measure'?'取 10 mL':'取 0.5 mL');await pick(tool);await button(tool==='measure'?'加入杯中':'滴入杯中');};
+  const start=async name=>{await escape();await button('实验记录本');await button(name);await page.screenshot({path:`output/playwright/guide-${name}.png`});await button('收起操作图解');};
+  const observe=async()=>{await click('lens');await page.waitForTimeout(700);await escape();};
+  const clean=async()=>{await pick('beaker');await button('倒入残液罐');await pick('beaker');await button('清洗空杯');};
+  const finish=async name=>{await inspect('notebook');await button('打开操作图解');await page.getByRole('heading',{name:'可以开始下一次实验',exact:true}).waitFor({timeout:10000});await page.screenshot({path:`output/playwright/complete-${name}.png`});};
+  const results={};
+  await start('酸碱中和');await open('acid');await dose();await open('indicator');await dose('pipette');await open('base');await dose();await dose();await page.waitForTimeout(4000);await observe();
+  results.neutralization=(await read()).vessel;if(Math.abs(results.neutralization.contents.OH-.001)>1e-8)throw new Error('base excess incorrect');await clean();await finish('酸碱中和');
+  await start('碳酸盐与酸');await open('water');await dose();await pick('spoon');await button('取 0.100 g 粉末');await pick('spoon');await button('称量粉末');
+  if((await read()).weighing!=='spoon')throw new Error('weighing missing');await pick('spoon');await button('加入粉末');await pick('tube');await button('连接导管');await open('acid');await dose();await page.waitForTimeout(4500);await observe();
+  results.carbonate=(await read()).vessel;if(Math.abs(results.carbonate.collected.CO2-.0005)>1e-8)throw new Error('carbonate gas incorrect');await clean();await finish('碳酸盐与酸');
+  await start('氢氧化铜沉淀');await open('copperSulfate');await dose();await open('base');await dose();await page.waitForTimeout(4000);await observe();
+  results.precipitation=(await read()).vessel;if(Math.abs(results.precipitation.contents.precipitate-.0005)>1e-8)throw new Error('precipitate incorrect');await clean();await finish('氢氧化铜沉淀');
+  await start('锌与稀酸');await pick('tweezers');await button('夹取锌粒');await pick('tweezers');await button('投入金属');await pick('tube');await button('连接导管');await open('acid');await dose();await dose();await page.waitForTimeout(5000);await observe();
+  results.zinc=(await read()).vessel;if(Math.abs(results.zinc.collected.H2-.001)>1e-8)throw new Error('hydrogen incorrect');await clean();await finish('锌与稀酸');
+  await start('密闭质量守恒');await pick('tweezers');await button('夹取锌粒');await pick('tweezers');await button('投入金属');await open('acid');await dose();await dose();await pick('beaker');await button('称量装置');
+  await pick('stopper');await button('塞紧杯口');await click('stirrer');await page.waitForTimeout(5500);await pick('beaker');await button('称量装置');const sealed=(await read()).vessel;
+  await pick('stopper');await button('放回原位');const opened=(await read()).vessel;
+  if(!sealed.closed||sealed.gas.H2!==.001||opened.closed||opened.escaped.H2!==.001)throw new Error('sealed transition incorrect');
+  results.sealed={retained:sealed.gas,escaped:opened.escaped};await clean();await finish('密闭质量守恒');
+  return results;
+}

@@ -1,0 +1,40 @@
+:root { background: #575649; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body, #root, main { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+canvas { display: block; touch-action: none; outline: none; }
+.parchment { width: 272px; padding: 19px 20px; color: #372f23; color-scheme: light; background-color: #d8c49c; background-image: radial-gradient(ellipse at 10% 20%, #a2855233, transparent 40%),radial-gradient(ellipse at 90% 85%,#99794a26,transparent 45%),repeating-linear-gradient(7deg,transparent 0 3px,#866e4105 4px 5px); border: 1px solid #977a50; border-radius: 2px 5px 3px 6px; box-shadow: inset 0 0 18px #8c6b3226,0 5px 13px #2f211947; font-family: Georgia, 'Songti SC', SimSun, 'Microsoft YaHei', serif; font-size: 14px; line-height: 1.65; position: relative; }
+.parchment h2 { font-size: 20px; margin: 0 0 12px; font-weight: normal; }
+.parchment p { margin: 9px 0; }
+.parchment button, .equation button { color: inherit; font: inherit; cursor: pointer; background: transparent; border: 0; border-bottom: 1px solid #977a50; padding: 2px 5px; margin: 2px 4px 2px 0; }
+.parchment button:hover, .parchment button:focus-visible, .equation button:hover { background: #baa07355; }
+.parchment .close-paper { position: absolute; right: 8px; top: 4px; border: 0; font-size: 22px; }
+.parchment ol { padding-left: 20px; margin: 10px 0; }
+.equation { min-width: 400px; max-width: 600px; text-align: center; color: #ece0bd; text-shadow: 0 1px 3px #302c22; font-family: Georgia, 'Microsoft YaHei', serif; font-size: 20px; line-height: 1.5; }
+.equation p { margin: 4px 0; }
+.equation p + p { font-size: 14px; }
+.operation-note { max-width: 190px; padding: 8px 11px; color: #372f23; background: #d8c49c; border: 1px solid #977a50; font: 13px/1.5 Georgia, 'Microsoft YaHei', serif; pointer-events: none; }
+.guide-sheet {width:286px;max-width:calc(100vw - 28px);}
+.welcome-sheet {width:340px;}
+.paper-caption {font-size:12px;letter-spacing:.05em;color:#6d5634;}
+.guide-sheet h3 {font-size:19px;font-weight:normal;margin:4px 0 9px;}
+.ink-drawing {display:block;width:126px;height:87px;margin:4px auto 8px;color:#705330;}
+.ink-drawing.small {width:96px;height:67px;}
+.parchment > .ink-drawing.small {float:right;width:72px;height:50px;margin:0 0 6px 8px;}
+.gesture-lessons {display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border-top:1px solid #9b80514d;border-bottom:1px solid #9b80514d;padding:7px 0 12px;}
+.gesture-lessons .ink-drawing {width:88px;max-width:100%;}
+.gesture-lessons strong {display:block;text-align:center;font-size:12px;font-weight:normal;}
+.parchment .paper-primary {display:block;clear:both;width:100%;padding:8px 10px;margin:10px 0 6px;border:1px solid #977a50;background:#a2804624;min-height:36px;}
+.paper-next {clear:both;border-top:1px solid #9b805180;margin-top:13px;padding-top:10px;}
+.paper-next span {font-size:11px;display:block;color:#705733;}
+.paper-next strong {display:block;font-weight:normal;font-size:15px;}
+.paper-next p {font-size:12px;line-height:1.65;}
+.specimen-data {font-variant-numeric:tabular-nums;}
+.gesture-note {clear:both;border-left:2px solid #99784b;padding-left:9px;font-size:12px;}
+.paper-footer {border-top:1px solid #9b80514d;margin-top:12px;padding-top:8px;font-size:12px;}
+.target-tag {white-space:nowrap;border:1px solid #b39862;color:#493820;background:#d8c49cf5;box-shadow:0 2px 7px #2f21193d;padding:6px 10px;font:13px Georgia,SimSun,serif;cursor:pointer;min-height:32px;}
+.target-tag:hover,.target-tag:focus-visible {background:#e5d3aa;outline:2px solid #b29152;outline-offset:2px;}
+.held-note,.object-tag {background:#d8c49ceb;color:#493820;border:1px solid #9c8052;padding:8px 12px;font:13px/1.6 Georgia,SimSun,serif;white-space:nowrap;box-shadow:0 2px 8px #2f21193d;}
+.held-note strong,.held-note span,.object-tag strong,.object-tag span {display:block;font-weight:normal;}
+.held-note span,.object-tag span {font-size:11px;}
+.held-note button {font:inherit;color:inherit;background:none;border:0;border-bottom:1px solid #997e51;cursor:pointer;margin-top:3px;}
+.parchment {max-width:calc(100vw - 28px);max-height:calc(100vh - 60px);overflow:auto;scrollbar-width:thin;scrollbar-color:#94784b #d8c49c;}

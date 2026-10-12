@@ -1,0 +1,43 @@
+{
+  "name": "ai-chemistry-lab",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n web,api \"vite --host 127.0.0.1\" \"tsx watch server/index.ts\"",
+    "dev:web": "vite --host 127.0.0.1",
+    "dev:api": "tsx watch server/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test src/lab/*.test.ts",
+    "build": "npm run typecheck && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "start:api": "tsx server/index.ts"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "dotenv": "^17.0.0",
+    "fastify": "^5.0.0",
+    "openai": "^6.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.180.0",
+    "three-stdlib": "^2.36.1",
+    "zod": "^4.0.0",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.0.0"
+  }
+}
